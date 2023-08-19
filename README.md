@@ -6,7 +6,7 @@
 
 🌐 [View the live site](https://spirit-101.github.io/intro-section-with-dropdown-menu/)
 
-🧠 [Check out the solution](https://www.frontendmentor.io/solutions/tip-calculator-app-HBJLjwxlx5)
+🧠 [Check out the solution](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-AgWuZK0mM5)
 
 📝 [View the challenge](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5)
 
