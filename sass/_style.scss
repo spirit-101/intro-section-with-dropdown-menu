@@ -1,0 +1,258 @@
+@use "sass:math";
+
+// RESETS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+// PIXEL -> REM (FUNC)
+$html-font-size: 16px;
+@function stripUnit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+@function rem($pxValue) {
+  @return #{math.div(stripUnit($pxValue), stripUnit($html-font-size))}rem;
+}
+
+/////// VARIABLES
+
+$almost-white: hsl(0, 0%, 98%);
+$medium-gray: hsl(0, 0%, 41%);
+$almost-black: hsl(0, 0%, 8%);
+
+//////////////////////////////////////////
+
+// STYLING
+body {
+  font-family: "Epilogue", sans-serif;
+  min-height: 100vh;
+
+  color: $medium-gray;
+  background-color: $almost-white;
+}
+
+img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  transform: all 0.2s;
+
+  &:hover {
+    color: $almost-black;
+  }
+}
+
+/////////////////////////////
+/// NAVIGATION
+
+.header {
+  padding: rem(30px) rem(40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: rem(60);
+}
+
+.nav {
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: rem(60px);
+  }
+
+  &__links {
+    display: flex;
+    gap: rem(42px);
+    font-size: rem(15px);
+
+    & li {
+      display: flex;
+      align-items: center;
+      gap: rem(8px);
+
+      & img {
+        width: 40%;
+        height: 40%;
+      }
+    }
+
+    &-link {
+      transition: all 0.4s;
+
+      &:hover {
+        color: $almost-black;
+      }
+    }
+  }
+
+  &__btn-box {
+    display: flex;
+    gap: rem(40px);
+    padding-right: rem(35px);
+
+    &-btn {
+      color: inherit;
+    }
+
+    &-register {
+      border: 2px solid $almost-black;
+      padding: rem(12px) rem(20px);
+      border-radius: 14px;
+    }
+  }
+}
+
+/////////////////////////////
+/// HERO
+
+.container {
+  max-width: rem(1300px);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 rem(50px);
+}
+
+.heading {
+  &__primary {
+    font-size: rem(70px);
+    color: $almost-black;
+    margin-bottom: rem(38px);
+  }
+}
+
+.hero {
+  &__text {
+    line-height: 1.6;
+    margin-bottom: rem(62px);
+    font-size: rem(17px);
+    text-align: left;
+    width: rem(450px);
+  }
+
+  &__btn {
+    background-color: $almost-black;
+    color: $almost-white;
+    padding: rem(18px) rem(30px);
+    border-radius: 12px;
+    transition: all 0.3 s;
+
+    &:hover {
+      background-color: lighten($almost-black, 10%);
+    }
+  }
+
+  &__text-box {
+    margin-bottom: rem(120px);
+  }
+
+  &__img-box {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-8%);
+
+    & img {
+      max-width: 75%;
+    }
+  }
+
+  &__logo-box {
+    display: flex;
+    gap: rem(40px);
+  }
+}
+
+/////////////////////////////
+/// DROPDOWNS
+.dropdown {
+  &__features,
+  &__company {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    padding: rem(24px) rem(30px);
+    gap: rem(14px);
+
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 12px;
+
+    transition: all 0.2s;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: rem(12px);
+
+      transition: all 0.3;
+      cursor: pointer;
+
+      &:hover {
+        color: $almost-black;
+      }
+    }
+  }
+
+  &__features {
+    bottom: -11rem;
+    left: 4rem;
+  }
+
+  &__company {
+    bottom: -9rem;
+    left: 16rem;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}

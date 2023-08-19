@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="script.js"></script>
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="nav__container">
+        <div class="nav__logo-box">
+          <img src="images/logo.svg" alt="Logo" />
+        </div>
+
+        <ul class="nav__links">
+          <li>
+            <a href="#" class="nav__links-link features__link" data-dropdown="1"
+              >Features</a
+            >
+            <img src="images/icon-arrow-down.svg" alt="" aria-hidden="true" />
+          </li>
+          <li>
+            <a href="#" class="nav__links-link company__link" data-dropdown="2"
+              >Company</a
+            >
+            <img src="images/icon-arrow-down.svg" alt="" aria-hidden="true" />
+          </li>
+          <li><a href="#" class="nav__links-link">Careers</a></li>
+          <li><a href="#" class="nav__links-link">About</a></li>
+        </ul>
+
+        <ul class="dropdown__features dropdown--1 hidden">
+          <li class="dropdown__features-item">
+            <img src="images/icon-todo.svg" alt="" aria-hidden="true" />
+            <p>Todo List</p>
+          </li>
+          <li class="dropdown__features-item">
+            <img src="images/icon-calendar.svg" alt="" aria-hidden="true" />
+            <p>Calendar</p>
+          </li>
+          <li class="dropdown__features-item">
+            <img src="images/icon-reminders.svg" alt="" aria-hidden="true" />
+            <p>Reminders</p>
+          </li>
+          <li class="dropdown__features-item">
+            <img src="images/icon-planning.svg" alt="" aria-hidden="true" />
+            <p>Planning</p>
+          </li>
+        </ul>
+
+        <ul class="dropdown__company dropdown--2 hidden">
+          <li class="dropdown__company-item">
+            <p>History</p>
+          </li>
+          <li class="dropdown__company-item">
+            <p>Our Team</p>
+          </li>
+          <li class="dropdown__company-item">Blog</li>
+        </ul>
+      </div>
+
+      <div class="nav__btn-box">
+        <button class="nav__btn-box-btn nav__btn-box-login" type="button">
+          Login
+        </button>
+        <button class="nav__btn-box-btn nav__btn-box-register" type="button">
+          Register
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="hero__info-box">
+          <div class="hero__text-box">
+            <h1 class="heading__primary">Make <br />remote work</h1>
+            <p class="hero__text">
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <a href="#" class="hero__btn">Learn more</a>
+          </div>
+
+          <div class="hero__logo-box">
+            <img src="images/client-databiz.svg" alt="Databiz" />
+            <img src="images/client-audiophile.svg" alt="Audiophile" />
+            <img src="images/client-meet.svg" alt="Meet" />
+            <img src="images/client-maker.svg" alt="Maker" />
+          </div>
+        </div>
+
+        <div class="hero__img-box">
+          <img
+            src="images/image-hero-desktop.png"
+            alt=""
+            aria-hidden="true"
+            class="hero__img"
+          />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
